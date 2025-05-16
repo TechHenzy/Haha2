@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CBL Bank Flasher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo.png" alt="CBL Bank Flasher Logo">
+                <h2>CBL Bank Flasher</h2>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <img src="images/avatar.png" alt="User Avatar">
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Loading...</h3>
+                    <p id="user-email">Loading...</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-th-large"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="receipts.html">
+                            <i class="fas fa-receipt"></i>
+                            <span>My Receipts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html">
+                            <i class="fas fa-history"></i>
+                            <span>History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="support.html">
+                            <i class="fas fa-headset"></i>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search receipts...">
+                </div>
+                <div class="header-actions">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <img src="images/avatar.png" alt="User Avatar">
+                        <span id="header-username">Loading...</span>
+                        <i class="fas fa-chevron-down"></i>
+                        <div class="dropdown-menu">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                            <a href="#" id="header-logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="welcome-banner">
+                    <div class="welcome-text">
+                        <h1>Welcome back, <span id="welcome-name">User</span>!</h1>
+                        <p>Here are your available receipt templates</p>
+                    </div>
+                    <div class="auth-status" id="auth-status">
+                        <div class="auth-badge unauthorized">
+                            <i class="fas fa-lock"></i>
+                            <span>Unauthorized</span>
+                        </div>
+                        <button id="get-auth-code" class="btn-get-code">Get Authenticator Code</button>
+                    </div>
+                </div>
+
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Receipts</h3>
+                            <p id="total-receipts">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Emails Sent</h3>
+                            <p id="emails-sent">0</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Auth Status</h3>
+                            <p id="auth-status-text">Unauthorized</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Member Since</h3>
+                            <p id="member-since">Today</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h2>Available Receipt Templates</h2>
+                    <div class="view-options">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="receipt-templates grid-view" id="receipt-templates">
+                    <!-- Templates will be loaded dynamically from JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Auth Code Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Enter Authenticator Code</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Please enter your authenticator code to unlock all receipt templates.</p>
+                <div class="form-group">
+                    <label for="auth-code">Authenticator Code</label>
+                    <input type="text" id="auth-code" placeholder="Enter your code">
+                </div>
+                <div class="auth-options">
+                    <button id="verify-code" class="btn-primary">Verify Code</button>
+                    <button id="how-to-get-code" class="btn-secondary">How to get a code?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How to Get Code Modal -->
+    <div id="how-to-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How to Get an Authenticator Code</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="pricing-info">
+                    <h3>Choose Your Plan</h3>
+                    <div class="plan-options">
+                        <div class="plan">
+                            <h4>Mini Plan</h4>
+                            <p class="price">₦30,000</p>
+                            <ul>
+                                <li>5 Receipt Templates</li>
+                                <li>30 Days Access</li>
+                            </ul>
+                        </div>
+                        <div class="plan featured">
+                            <div class="plan-badge">Popular</div>
+                            <h4>Pro Plan</h4>
+                            <p class="price">₦50,000</p>
+                            <ul>
+                                <li>All Receipt Templates</li>
+                                <li>90 Days Access</li>
+                            </ul>
+                        </div>
+                        <div class="plan">
+                            <h4>Premium Plan</h4>
+                            <p class="price">₦80,000</p>
+                            <ul>
+                                <li>All Receipt Templates</li>
+                                <li>1 Year Access</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Us to Purchase</h3>
+                    <p>Send a message to our WhatsApp to purchase an authenticator code:</p>
+                    <a href="https://wa.me/1234567890?text=Hello%20sir%20I%20need%20an%20authenticator%20code%20for%20your%20CBL%20bank%20flasher%20site" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Contact on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

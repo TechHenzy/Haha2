@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CBL Bank Flasher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo.png" alt="CBL Bank Flasher Logo">
+                <h2>CBL Bank Flasher</h2>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <img src="images/avatar.png" alt="User Avatar">
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Loading...</h3>
+                    <p id="user-email">Loading...</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-th-large"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="receipts.html">
+                            <i class="fas fa-receipt"></i>
+                            <span>My Receipts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html">
+                            <i class="fas fa-history"></i>
+                            <span>History</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="support.html">
+                            <i class="fas fa-headset"></i>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-breadcrumb">
+                    <a href="dashboard.html">Dashboard</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="header-actions">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <img src="images/avatar.png" alt="User Avatar">
+                        <span id="header-username">Loading...</span>
+                        <i class="fas fa-chevron-down"></i>
+                        <div class="dropdown-menu">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                            <a href="#" id="header-logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <img src="images/avatar.png" alt="User Avatar">
+                            <div class="avatar-overlay">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h1 id="profile-name">Loading...</h1>
+                            <p id="profile-email">Loading...</p>
+                            <div class="profile-status" id="profile-status">
+                                <div class="status-badge unauthorized">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Unauthorized</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-tabs">
+                        <button class="tab-btn active" data-tab="account">Account Information</button>
+                        <button class="tab-btn" data-tab="subscription">Subscription</button>
+                        <button class="tab-btn" data-tab="security">Security</button>
+                    </div>
+
+                    <div class="profile-content">
+                        <div class="tab-content active" id="account-tab">
+                            <div class="profile-card">
+                                <div class="profile-card-header">
+                                    <h3>Personal Information</h3>
+                                    <button class="btn-edit">
+                                        <i class="fas fa-edit"></i>
+                                        <span>Edit</span>
+                                    </button>
+                                </div>
+                                <div class="profile-card-body">
+                                    <div class="profile-field">
+                                        <label>Full Name</label>
+                                        <p id="profile-fullname">Loading...</p>
+                                    </div>
+                                    <div class="profile-field">
+                                        <label>Email Address</label>
+                                        <p id="profile-email-field">Loading...</p>
+                                    </div>
+                                    <div class="profile-field">
+                                        <label>Member Since</label>
+                                        <p id="profile-member-since">Loading...</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <div class="profile-card-header">
+                                    <h3>Usage Statistics</h3>
+                                </div>
+                                <div class="profile-card-body">
+                                    <div class="profile-stats">
+                                        <div class="profile-stat">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-file-alt"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <h4>Total Receipts</h4>
+                                                <p id="profile-total-receipts">0</p>
+                                            </div>
+                                        </div>
+                                        <div class="profile-stat">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <h4>Emails Sent</h4>
+                                                <p id="profile-emails-sent">0</p>
+                                            </div>
+                                        </div>
+                                        <div class="profile-stat">
+                                            <div class="stat-icon">
+                                                <i class="fas fa-calendar-check"></i>
+                                            </div>
+                                            <div class="stat-info">
+                                                <h4>Last Activity</h4>
+                                                <p id="profile-last-activity">Today</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="subscription-tab">
+                            <div class="profile-card">
+                                <div class="profile-card-header">
+                                    <h3>Current Plan</h3>
+                                </div>
+                                <div class="profile-card-body">
+                                    <div class="current-plan" id="current-plan-free">
+                                        <div class="plan-badge">Free Plan</div>
+                                        <p>You are currently on the Free Plan with limited access to templates.</p>
+                                        <button id="upgrade-btn" class="btn-primary">Upgrade Now</button>
+                                    </div>
+                                    <div class="current-plan hidden" id="current-plan-pro">
+                                        <div class="plan-badge pro">Pro Plan</div>
+                                        <p>You are currently on the Pro Plan with access to all templates.</p>
+                                        <div class="plan-details">
+                                            <div class="plan-detail">
+                                                <span>Authentication Code:</span>
+                                                <span id="auth-code-display">********</span>
+                                            </div>
+                                            <div class="plan-detail">
+                                                <span>Status:</span>
+                                                <span class="status active">Active</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <div class="profile-card-header">
+                                    <h3>Available Plans</h3>
+                                </div>
+                                <div class="profile-card-body">
+                                    <div class="available-plans">
+                                        <div class="plan-card">
+                                            <div class="plan-header">
+                                                <h4>Mini Plan</h4>
+                                                <div class="plan-price">
+                                                    <span class="currency">₦</span>
+                                                    <span class="amount">30,000</span>
+                                                </div>
+                                            </div>
+                                            <div class="plan-features">
+                                                <ul>
+                                                    <li><i class="fas fa-check"></i> 5 Receipt Templates</li>
+                                                    <li><i class="fas fa-check"></i> Basic Customization</li>
+                                                    <li><i class="fas fa-check"></i> Email Delivery</li>
+                                                    <li><i class="fas fa-check"></i> 30 Days Access</li>
+                                                </ul>
+                                            </div>
+                                            <button class="btn-plan">Get Started</button>
+                                        </div>
+                                        <div class="plan-card featured">
+                                            <div class="plan-badge">Most Popular</div>
+                                            <div class="plan-header">
+                                                <h4>Pro Plan</h4>
+                                                <div class="plan-price">
+                                                    <span class="currency">₦</span>
+                                                    <span class="amount">50,000</span>
+                                                </div>
+                                            </div>
+                                            <div class="plan-features">
+                                                <ul>
+                                                    <li><i class="fas fa-check"></i> All Receipt Templates</li>
+                                                    <li><i class="fas fa-check"></i> Advanced Customization</li>
+                                                    <li><i class="fas fa-check"></i> Email Delivery</li>
+                                                    <li><i class="fas fa-check"></i> 90 Days Access</li>
+                                                    <li><i class="fas fa-check"></i> Priority Support</li>
+                                                </ul>
+                                            </div>
+                                            <button class="btn-plan">Get Started</button>
+                                        </div>
+                                        <div class="plan-card">
+                                            <div class="plan-header">
+                                                <h4>Premium Plan</h4>
+                                                <div class="plan-price">
+                                                    <span class="currency">₦</span>
+                                                    <span class="amount">80,000</span>
+                                                </div>
+                                            </div>
+                                            <div class="plan-features">
+                                                <ul>
+                                                    <li><i class="fas fa-check"></i> All Receipt Templates</li>
+                                                    <li><i class="fas fa-check"></i> Advanced Customization</li>
+                                                    <li><i class="fas fa-check"></i> Email Delivery</li>
+                                                    <li><i class="fas fa-check"></i> 1 Year Access</li>
+                                                    <li><i class="fas fa-check"></i> 24/7 VIP Support</li>
+                                                </ul>
+                                            </div>
+                                            <button class="btn-plan">Get Started</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="security-tab">
+                            <div class="profile-card">
+                                <div class="profile-card-header">
+                                    <h3>Change Password</h3>
+                                </div>
+                                <div class="profile-card-body">
+                                    <form id="change-password-form">
+                                        <div class="form-group">
+                                            <label for="current-password">Current Password</label>
+                                            <div class="input-icon">
+                                                <i class="fas fa-lock"></i>
+                                                <input type="password" id="current-password" name="current-password" placeholder="Enter current password">
+                                                <i class="fas fa-eye-slash toggle-password"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="new-password">New Password</label>
+                                            <div class="input-icon">
+                                                <i class="fas fa-lock"></i>
+                                                <input type="password" id="new-password" name="new-password" placeholder="Enter new password">
+                                                <i class="fas fa-eye-slash toggle-password"></i>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirm-new-password">Confirm New Password</label>
+                                            <div class="input-icon">
+                                                <i class="fas fa-lock"></i>
+                                                <input type="password" id="confirm-new-password" name="confirm-new-password" placeholder="Confirm new password">
+                                                <i class="fas fa-eye-slash toggle-password"></i>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn-primary">Update Password</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="profile-card">
+                                <div class="profile-card-header">
+                                    <h3>Account Security</h3>
+                                </div>
+                                <div class="profile-card-body">
+                                    <div class="security-options">
+                                        <div class="security-option">
+                                            <div class="option-info">
+                                                <h4>Two-Factor Authentication</h4>
+                                                <p>Add an extra layer of security to your account</p>
+                                            </div>
+                                            <div class="option-action">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="two-factor-toggle">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="security-option">
+                                            <div class="option-info">
+                                                <h4>Login Notifications</h4>
+                                                <p>Receive email notifications when your account is accessed</p>
+                                            </div>
+                                            <div class="option-action">
+                                                <label class="switch">
+                                                    <input type="checkbox" id="login-notifications-toggle" checked>
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="security-option">
+                                            <div class="option-info">
+                                                <h4>Session Management</h4>
+                                                <p>Manage your active sessions and devices</p>
+                                            </div>
+                                            <div class="option-action">
+                                                <button class="btn-secondary">Manage</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Auth Code Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Enter Authenticator Code</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Please enter your authenticator code to unlock all receipt templates.</p>
+                <div class="form-group">
+                    <label for="auth-code">Authenticator Code</label>
+                    <input type="text" id="auth-code" placeholder="Enter your code">
+                </div>
+                <div class="auth-options">
+                    <button id="verify-code" class="btn-primary">Verify Code</button>
+                    <button id="how-to-get-code" class="btn-secondary">How to get a code?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How to Get Code Modal -->
+    <div id="how-to-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How to Get an Authenticator Code</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="pricing-info">
+                    <h3>Choose Your Plan</h3>
+                    <div class="plan-options">
+                        <div class="plan">
+                            <h4>Mini Plan</h4>
+                            <p class="price">₦30,000</p>
+                            <ul>
+                                <li>5 Receipt Templates</li>
+                                <li>30 Days Access</li>
+                            </ul>
+                        </div>
+                        <div class="plan featured">
+                            <div class="plan-badge">Popular</div>
+                            <h4>Pro Plan</h4>
+                            <p class="price">₦50,000</p>
+                            <ul>
+                                <li>All Receipt Templates</li>
+                                <li>90 Days Access</li>
+                            </ul>
+                        </div>
+                        <div class="plan">
+                            <h4>Premium Plan</h4>
+                            <p class="price">₦80,000</p>
+                            <ul>
+                                <li>All Receipt Templates</li>
+                                <li>1 Year Access</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact Us to Purchase</h3>
+                    <p>Send a message to our WhatsApp to purchase an authenticator code:</p>
+                    <a href="https://wa.me/1234567890?text=Hello%20sir%20I%20need%20an%20authenticator%20code%20for%20your%20CBL%20bank%20flasher%20site" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Contact on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

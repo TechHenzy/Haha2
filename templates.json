@@ -1,0 +1,180 @@
+{
+  "templates": [
+    {
+      "id": 1,
+      "name": "PalmPay Transfer",
+      "description": "Generate a PalmPay transfer receipt with customizable amount and recipient.",
+      "bank": "PalmPay",
+      "image": "images/palmpay.png",
+      "premium": false,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "reference", "label": "Reference Number", "type": "text", "required": false },
+        { "name": "date", "label": "Date", "type": "date", "required": false }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Westpac Payment",
+      "description": "Generate a Westpac bank payment receipt with customizable amount and recipient.",
+      "bank": "Westpac",
+      "image": "images/westpac.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "reference", "label": "Reference Number", "type": "text", "required": false },
+        { "name": "date", "label": "Date", "type": "date", "required": false }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Chase Bank Transfer",
+      "description": "Create a Chase Bank transfer confirmation with detailed transaction information.",
+      "bank": "Chase",
+      "image": "images/chase.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "receiver_account", "label": "Receiver Account (last 4 digits)", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "date", "label": "Date", "type": "date", "required": false },
+        { "name": "reference", "label": "Confirmation Number", "type": "text", "required": false }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bank of America Transfer",
+      "description": "Generate a Bank of America transfer receipt with account details and confirmation number.",
+      "bank": "Bank of America",
+      "image": "images/bankofamerica.png",
+      "premium": true,
+      "fields": [
+        { "name": "from_account", "label": "From Account", "type": "text", "required": true },
+        { "name": "to_account", "label": "To Account", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "date", "label": "Date", "type": "date", "required": false },
+        { "name": "confirmation", "label": "Confirmation Number", "type": "text", "required": false }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "ICICI Bank Payment",
+      "description": "Create an ICICI Bank payment receipt with IMPS transfer details and reference ID.",
+      "bank": "ICICI",
+      "image": "images/icici.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_account", "label": "Receiver Account", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "reference", "label": "Reference ID", "type": "text", "required": false },
+        { "name": "mode", "label": "Mode", "type": "select", "options": ["IMPS", "NEFT", "RTGS"], "required": false },
+        { "name": "from_account", "label": "From Account", "type": "text", "required": false }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "MoneyGram Transfer",
+      "description": "Generate a MoneyGram international money transfer receipt with reference number.",
+      "bank": "MoneyGram",
+      "image": "images/moneygram.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "receiver_country", "label": "Receiver Country", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "currency", "label": "Currency", "type": "text", "required": false },
+        { "name": "reference", "label": "Reference Number", "type": "text", "required": false },
+        { "name": "date", "label": "Date", "type": "date", "required": false }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "PayPal Payment",
+      "description": "Create a PayPal payment confirmation receipt with transaction details and fees.",
+      "bank": "PayPal",
+      "image": "images/paypal.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "fee", "label": "Fee", "type": "number", "required": false },
+        { "name": "date", "label": "Date", "type": "date", "required": false },
+        { "name": "reference", "label": "Transaction ID", "type": "text", "required": false }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Zelle Transfer",
+      "description": "Generate a Zelle money transfer receipt with phone number and memo.",
+      "bank": "Zelle",
+      "image": "images/zelle.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "receiver_phone", "label": "Receiver Phone", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "memo", "label": "Memo/Note", "type": "text", "required": false }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Cash App Payment",
+      "description": "Create a Cash App payment receipt with customizable amount and recipient.",
+      "bank": "Cash App",
+      "image": "images/cashapp.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "date", "label": "Date", "type": "date", "required": false },
+        { "name": "note", "label": "Note", "type": "text", "required": false }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "UBA Bank Transfer",
+      "description": "Generate a UBA Bank transfer receipt with account details and transaction ID.",
+      "bank": "UBA",
+      "image": "images/uba.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "receiver_account", "label": "Receiver Account", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "date", "label": "Date", "type": "date", "required": false },
+        { "name": "reference", "label": "Transaction ID", "type": "text", "required": false }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Citibank Wire Transfer",
+      "description": "Create a Citibank wire transfer receipt with reference number and transaction details.",
+      "bank": "Citibank",
+      "image": "images/citibank.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_name", "label": "Receiver Name", "type": "text", "required": true },
+        { "name": "receiver_account", "label": "Receiver Account", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "date", "label": "Date", "type": "date", "required": false },
+        { "name": "reference", "label": "Reference Number", "type": "text", "required": false }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Cryptocurrency Payment",
+      "description": "Generate a cryptocurrency payment receipt with wallet address and transaction reference.",
+      "bank": "Cryptocurrency",
+      "image": "images/crypto.png",
+      "premium": true,
+      "fields": [
+        { "name": "receiver_account", "label": "Wallet Address", "type": "text", "required": true },
+        { "name": "amount", "label": "Amount", "type": "number", "required": true },
+        { "name": "date", "label": "Date", "type": "date", "required": false },
+        { "name": "reference", "label": "Transaction Reference", "type": "text", "required": false }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Generator - CBL Bank Flasher</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo.png" alt="CBL Bank Flasher Logo" onerror="this.src='https://via.placeholder.com/150x50?text=CBL+Bank+Flasher'">
+                <h2>CBL Bank Flasher</h2>
+                <button id="sidebar-toggle" class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <img src="images/avatar.png" alt="User Avatar" onerror="this.src='https://via.placeholder.com/40x40?text=User'">
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Loading...</h3>
+                    <p id="user-email">Loading...</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="fas fa-th-large"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="receipts.html">
+                            <i class="fas fa-receipt"></i>
+                            <span>My Receipts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html">
+                            <i class="fas fa-history"></i>
+                            <span>History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="support.html">
+                            <i class="fas fa-headset"></i>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-breadcrumb">
+                    <a href="dashboard.html">Dashboard</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="receipts.html">Receipt Templates</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span id="receipt-template-name">Loading Template...</span>
+                </div>
+                <div class="header-actions">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <img src="images/avatar.png" alt="User Avatar" onerror="this.src='https://via.placeholder.com/35x35?text=User'">
+                        <span id="header-username">Loading...</span>
+                        <i class="fas fa-chevron-down"></i>
+                        <div class="dropdown-menu">
+                            <a href="profile.html">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </a>
+                            <a href="#" id="header-logout-btn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="generator-container">
+                    <div class="generator-form">
+                        <div class="form-header">
+                            <h2>Customize Your Receipt</h2>
+                            <p>Fill in the details below to generate your receipt</p>
+                        </div>
+                        <form id="receipt-form">
+                            <input type="hidden" id="template-id" name="template-id">
+                            <div class="form-group">
+                                <label for="receiver-name">Receiver Name</label>
+                                <input type="text" id="receiver-name" name="receiver-name" placeholder="Enter receiver name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="receiver-account">Receiver Account Number</label>
+                                <input type="text" id="receiver-account" name="receiver-account" placeholder="Enter account number">
+                            </div>
+                            <div class="form-group">
+                                <label for="amount">Amount</label>
+                                <div class="input-icon">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <input type="text" id="amount" name="amount" placeholder="Enter amount" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="date">Date</label>
+                                    <input type="date" id="date" name="date">
+                                </div>
+                                <div class="form-group half">
+                                    <label for="time">Time (Optional)</label>
+                                    <input type="time" id="time" name="time">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reference">Reference/Confirmation Number (Optional)</label>
+                                <input type="text" id="reference" name="reference" placeholder="Enter reference number">
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Notes (Optional)</label>
+                                <textarea id="notes" name="notes" placeholder="Enter additional notes"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="button-text">Button Text (Optional)</label>
+                                <input type="text" id="button-text" name="button-text" placeholder="e.g., Contact Support">
+                            </div>
+                            <div class="form-group">
+                                <label for="button-link">Button Link (Optional)</label>
+                                <input type="url" id="button-link" name="button-link" placeholder="https://example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Transaction Status</label>
+                                <select id="status" name="status">
+                                    <option value="successful">Successful</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="rejected">Rejected</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-email">Send Receipt To (Email)</label>
+                                <div class="input-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="recipient-email" name="recipient-email" placeholder="Enter email address" required>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" id="preview-btn" class="btn-secondary">Preview Receipt</button>
+                                <button type="submit" id="generate-btn" class="btn-primary">Generate & Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="receipt-preview">
+                        <div class="preview-header">
+                            <h2>Receipt Preview</h2>
+                            <div class="preview-actions">
+                                <button id="refresh-preview" class="btn-icon" title="Refresh Preview">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button id="download-preview" class="btn-icon" title="Download Preview">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="preview-container" id="preview-container">
+                            <div class="preview-placeholder">
+                                <i class="fas fa-receipt"></i>
+                                <p>Fill in the form and click "Preview Receipt" to see your receipt here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header success">
+                <i class="fas fa-check-circle"></i>
+                <h2>Receipt Sent Successfully!</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Your receipt has been generated and sent to <span id="success-email">example@email.com</span>.</p>
+                <div class="success-actions">
+                    <button id="create-another" class="btn-secondary">Create Another Receipt</button>
+                    <button id="view-history" class="btn-primary">View History</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

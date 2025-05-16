@@ -1,0 +1,169 @@
+{
+  "users": [
+    {
+      "id": "1747160945268",
+      "fullname": "Emmanuel Henshaw",
+      "email": "emmy2@gmail.com",
+      "password": "11111111",
+      "isAuthenticated": true,
+      "authCode": "AUTH-12345-ABCDE",
+      "createdAt": "2025-05-13T18:29:05.276Z",
+      "receipts": [
+        {
+          "id": "1747161038757",
+          "templateId": "4",
+          "receiverName": "Peter",
+          "receiverAccount": "36463464747",
+          "amount": "5000",
+          "date": "2025-05-13",
+          "time": "",
+          "reference": "53736",
+          "notes": "11111111",
+          "buttonText": "CONTACT SUPPORT ",
+          "buttonLink": "https://emmy.com",
+          "status": "successful",
+          "recipientEmail": "emmyhenztech@gmail.com",
+          "sentAt": "2025-05-13T18:30:38.750Z"
+        },
+        {
+          "id": "1747161654390",
+          "templateId": "5",
+          "receiverName": "Peter",
+          "receiverAccount": "36463464747",
+          "amount": "5000",
+          "date": "2025-05-13",
+          "time": "",
+          "reference": "53736",
+          "notes": "Hi",
+          "buttonText": "CONTACT SUPPORT ",
+          "buttonLink": "https://emmy.com",
+          "status": "successful",
+          "recipientEmail": "emmyhenztech@gmail.com",
+          "sentAt": "2025-05-13T18:40:54.378Z"
+        }
+      ],
+      "emailsSent": 2
+    },
+    {
+      "id": "1747167574865",
+      "fullname": "Emmanuel Henshaw",
+      "email": "emmy12@gmail.com",
+      "password": "11111111",
+      "isAuthenticated": true,
+      "authCode": "AUTH-67890-FGHIJ",
+      "createdAt": "2025-05-13T20:19:34.865Z",
+      "receipts": [
+        {
+          "id": "1747167648393",
+          "templateId": "4",
+          "receiverName": "Peter",
+          "receiverAccount": "36463464747",
+          "amount": "5000",
+          "date": "2025-05-13",
+          "time": "21:20",
+          "reference": "53736",
+          "notes": "AUTH-67890-FGHIJ",
+          "buttonText": "CONTACT SUPPORT ",
+          "buttonLink": "https://emmy.com",
+          "status": "successful",
+          "recipientEmail": "emmyhenztech@gmail.com",
+          "sentAt": "2025-05-13T20:20:48.375Z"
+        },
+        {
+          "id": "1747167737077",
+          "templateId": "1",
+          "receiverName": "Peter",
+          "receiverAccount": "36463464747",
+          "amount": "5000",
+          "date": "2025-05-13",
+          "time": "",
+          "reference": "53736",
+          "notes": "Hello",
+          "buttonText": "CONTACT SUPPORT ",
+          "buttonLink": "https://emmy.com",
+          "status": "pending",
+          "recipientEmail": "emmyhenztech@gmail.com",
+          "sentAt": "2025-05-13T20:22:17.070Z"
+        }
+      ],
+      "emailsSent": 2
+    },
+    {
+      "id": "1747168142269",
+      "fullname": "Emmanuel Henshaw",
+      "email": "emmy5@gmail.com",
+      "password": "11111111",
+      "isAuthenticated": true,
+      "authCode": "AUTH-24680-PQRST",
+      "createdAt": "2025-05-13T20:29:02.274Z",
+      "receipts": [
+        {
+          "id": "1747169461466",
+          "templateId": "4",
+          "receiverName": "Peter",
+          "receiverAccount": "36463464747",
+          "amount": "5000",
+          "date": "2025-05-13",
+          "time": "",
+          "reference": "53736",
+          "notes": "GOD HELP ME PLSSSSS",
+          "buttonText": "CONTACT SUPPORT ",
+          "buttonLink": "https://emmy.com",
+          "status": "successful",
+          "recipientEmail": "emmyhenztech@gmail.com",
+          "sentAt": "2025-05-13T20:51:01.459Z"
+        },
+        {
+          "id": "1747170577333",
+          "templateId": "8",
+          "receiverName": "Peter",
+          "receiverAccount": "36463464747",
+          "amount": "5000",
+          "date": "2025-05-13",
+          "time": "22:09",
+          "reference": "53736",
+          "notes": "Hi",
+          "buttonText": "CONTACT SUPPORT ",
+          "buttonLink": "https://emmy.com",
+          "status": "pending",
+          "recipientEmail": "emmyhenztech@gmail.com",
+          "sentAt": "2025-05-13T21:09:37.315Z"
+        },
+        {
+          "id": "1747190922510",
+          "templateId": "2",
+          "receiverName": "Emmy",
+          "receiverAccount": "656655",
+          "amount": "6700",
+          "date": "2025-05-14",
+          "time": "",
+          "reference": "5758",
+          "notes": "God help me",
+          "buttonText": "Contact Support ",
+          "buttonLink": "https://emmy.com",
+          "status": "pending",
+          "recipientEmail": "emmyhenztech@gmail.com",
+          "sentAt": "2025-05-14T02:48:42.502Z"
+        },
+        {
+          "id": "1747191109604",
+          "templateId": "1",
+          "receiverName": "Emmy ",
+          "receiverAccount": "67667766",
+          "amount": "4000",
+          "date": "2025-05-14",
+          "time": "",
+          "reference": "57666",
+          "notes": "Hi",
+          "buttonText": "Continue ",
+          "buttonLink": "https://emmy.net",
+          "status": "pending",
+          "recipientEmail": "emmyhenztech@gmail.com",
+          "sentAt": "2025-05-14T02:51:49.586Z"
+        }
+      ],
+      "emailsSent": 4,
+      "lastEmailTime": "2025-05-14T02:51:49.604Z"
+    }
+  ]
+}
