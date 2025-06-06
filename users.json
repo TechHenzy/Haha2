@@ -164,6 +164,50 @@
       ],
       "emailsSent": 4,
       "lastEmailTime": "2025-05-14T02:51:49.604Z"
+    },
+    {
+      "id": "1748728273318",
+      "fullname": "eben",
+      "email": "Omotayoebenezer49@gmail.com",
+      "password": "mzeesmmmzeesmm",
+      "isAuthenticated": true,
+      "authCode": "AUTH-97531-UVWXY",
+      "createdAt": "2025-05-31T21:51:13.318Z",
+      "receipts": [],
+      "emailsSent": 0
+    },
+    {
+      "id": "1748755752440",
+      "fullname": "Bamzy",
+      "email": "babalolaayomide072@gmail.com",
+      "password": "babcute1000",
+      "isAuthenticated": true,
+      "authCode": "AUTH-78668-XXYYZ",
+      "createdAt": "2025-06-01T05:29:12.440Z",
+      "receipts": [],
+      "emailsSent": 0
+    },
+    {
+      "id": "1748764752356",
+      "fullname": "Hype Man",
+      "email": "confidencegodgift@gmail.com",
+      "password": "Corah2022",
+      "isAuthenticated": false,
+      "authCode": null,
+      "createdAt": "2025-06-01T07:59:12.356Z",
+      "receipts": [],
+      "emailsSent": 0
+    },
+    {
+      "id": "1748947586349",
+      "fullname": "Somto ",
+      "email": "somtoibeh954@gmail.com",
+      "password": "Somto@12",
+      "isAuthenticated": true,
+      "authCode": "AUTH-26116-SSTTU",
+      "createdAt": "2025-06-03T10:46:26.349Z",
+      "receipts": [],
+      "emailsSent": 0
     }
   ]
 }

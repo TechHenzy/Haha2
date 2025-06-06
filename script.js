@@ -1,4 +1,4 @@
-// Main JavaScript file for CBL Bank Flasher
+// Main JavaScript file for Flashem Bank Flasher
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize the application
   initApp()
